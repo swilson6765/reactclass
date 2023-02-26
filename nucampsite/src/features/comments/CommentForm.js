@@ -20,8 +20,9 @@ const CommentForm = ({campsiteId}) => {
         <>
         {/* this is what causes the modal to open */}
         <Button outline onClick={() => setModalOpen(true)}>
-            {/* This is the styeling of the button */}
+            {/* This is the styling of the button */}
             <i className='fa fa-pencil fa-lg' /> Add Comment
+        </Button>
             {/* This is the form when the modal opens */}
             <Modal isOpen={modalOpen}>
                 <ModalHeader toggle={() => {
@@ -32,7 +33,7 @@ const CommentForm = ({campsiteId}) => {
                 <ModalBody>
                     {/* this is the form value when it first renders */}
                     <Formik initialValue={{
-                        rating: 'undefined', 
+                        rating: undefined, 
                         author: '', 
                         commentText: ''
                     }}
@@ -57,9 +58,9 @@ const CommentForm = ({campsiteId}) => {
                                     <option>5</option>
                                 </Field>
                                     {/* adding the if else code block to the view */}
-                                    <ErrorMessage name='rating'>
-                                        {(msg) => <p className='text-danger'>{msg}</p>}
-                                    </ErrorMessage>
+                                <ErrorMessage name='rating'>
+                                    {(msg) => <p className='text-danger'>{msg}</p>}
+                                </ErrorMessage>
                             </FormGroup>
                             <FormGroup>
                                 <Label htmlFor='author'>Your Name</Label>
@@ -69,9 +70,9 @@ const CommentForm = ({campsiteId}) => {
                                     className='form-control'
                                 />
                                     {/* adding the if else code block to the view */}
-                                    <ErrorMessage name='author'>
-                                        {(msg) => <p className='text-danger'>{msg}</p>}
-                                    </ErrorMessage>
+                                <ErrorMessage name='author'>
+                                    {(msg) => <p className='text-danger'>{msg}</p>}
+                                </ErrorMessage>
                             </FormGroup>
                             <FormGroup>
                                 <Label htmlFor='commentText'>Comment</Label>
@@ -89,7 +90,6 @@ const CommentForm = ({campsiteId}) => {
                     </Formik>
                 </ModalBody>
             </Modal>
-        </Button>
         </>
     )};
 

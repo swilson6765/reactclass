@@ -2,7 +2,7 @@
 export const validateCommentForm = (values) => {
     const errors = {};
     if (!values.rating) {
-        errors.rating = 'Requeired';
+        errors.rating = 'Required';
     }
 
     if (values.author.length < 2) {
