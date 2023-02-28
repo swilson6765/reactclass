@@ -1,4 +1,3 @@
-// This is the code for the error messages 
 export const validateCommentForm = (values) => {
     const errors = {};
     if (!values.rating) {

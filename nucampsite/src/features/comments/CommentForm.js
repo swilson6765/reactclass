@@ -25,14 +25,12 @@ const CommentForm = ({campsiteId}) => {
         </Button>
             {/* This is the form when the modal opens */}
             <Modal isOpen={modalOpen}>
-                <ModalHeader toggle={() => {
-                    return (setModalOpen(false))
-                }}>
+                <ModalHeader toggle={() => {setModalOpen(false)}}>
                     Add Comment
                 </ModalHeader>
                 <ModalBody>
                     {/* this is the form value when it first renders */}
-                    <Formik initialValue={{
+                    <Formik initialValues={{
                         rating: undefined, 
                         author: '', 
                         commentText: ''
